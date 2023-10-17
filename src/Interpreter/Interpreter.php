@@ -12,6 +12,7 @@ class Interpreter
 	protected CodeReader $reader;
 	protected Data $data;
 	protected LoopCounter $loopCounter;
+	protected ResponseBuilder $responseBuilder;
 	protected Response $response;
 
 	public function __construct(string $code)
@@ -19,13 +20,12 @@ class Interpreter
 		$this->reader = new CodeReader($code);
 		$this->data = new Data();
 		$this->loopCounter = new LoopCounter();
+		$this->responseBuilder = new ResponseBuilder();
 	}
 
 	public function run(): Response
 	{
 		if (isset($this->response)) return $this->response;
-
-		$this->response = new Response();
 
 		return $this->runUntilEnd();
 	}
@@ -37,6 +37,8 @@ class Interpreter
 
 			$this->interpret($char);
 		}
+
+		$this->response = $this->responseBuilder->build();
 
 		return $this->response;
 	}
@@ -57,7 +59,7 @@ class Interpreter
 				$this->data->decrement();
 				break;
 			case ".":
-				$this->response->add($this->data->get());
+				$this->responseBuilder->add($this->data->get());
 				break;
 			case ",":
 			case "[":

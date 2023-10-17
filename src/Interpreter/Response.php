@@ -4,11 +4,9 @@ namespace AdrienNf\BrainfuckInterpreter\Interpreter;
 
 class Response
 {
-	protected array $data = [];
-
-	public function add(int $value): void
+	public function __construct(protected array $data)
 	{
-		$this->data[] = $value;
+		//
 	}
 
 	public function getDataAt(int $index): int
@@ -19,5 +17,10 @@ class Response
 	public function getData(): array
 	{
 		return $this->data;
+	}
+
+	public function getDataAsString(): string
+	{
+		return join("", array_map(fn ($e) => chr($e), $this->data));
 	}
 }
