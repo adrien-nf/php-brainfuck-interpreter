@@ -1,0 +1,23 @@
+{
+	"name": "adrien-nf/brainfuck-interpreter",
+	"description": "Brainfuck interpreter for your daily usage.",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"AdrienNf\\BrainfuckInterpreter\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Adrien N. F.",
+			"email": "iamnautilusjungle@gmail.com"
+		}
+	],
+	"require-dev": {
+		"phpunit/phpunit": "^10.4"
+	},
+	"scripts": {
+		"test": "phpunit ./tests"
+	}
+}
