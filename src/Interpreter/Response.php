@@ -19,7 +19,7 @@ class Response
 		return $this->data;
 	}
 
-	public function getDataAsString(): string
+	public function getDataAsAscii(): string
 	{
 		return join("", array_map(fn ($e) => chr($e), $this->data));
 	}
