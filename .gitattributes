@@ -9,5 +9,8 @@ tests                          export-ignore
 phpunit.xml                    export-ignore
 .phpunit.result.cache          export-ignore
 
+# Misc
+LICENSE                        export-ignore
+
 # Auto detect text files and perform LF normalization
 * text=auto
