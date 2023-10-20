@@ -12,14 +12,16 @@ class Interpreter
 	protected CodeReader $reader;
 	protected Data $data;
 	protected LoopCounter $loopCounter;
+	protected Inputs $inputs;
 	protected ResponseBuilder $responseBuilder;
 	protected Response $response;
 
-	public function __construct(string $code)
+	public function __construct(string $code, string|array $inputs = [])
 	{
 		$this->reader = new CodeReader($code);
 		$this->data = new Data();
 		$this->loopCounter = new LoopCounter();
+		$this->inputs = new Inputs($inputs);
 		$this->responseBuilder = new ResponseBuilder();
 	}
 
@@ -62,6 +64,8 @@ class Interpreter
 				$this->responseBuilder->add($this->data->get());
 				break;
 			case ",":
+				$this->data->set($this->inputs->get());
+				break;
 			case "[":
 				$this->onOpenBracket();
 				break;
