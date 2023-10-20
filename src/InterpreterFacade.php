@@ -7,8 +7,8 @@ use AdrienNf\BrainfuckInterpreter\Interpreter\Response;
 
 class InterpreterFacade
 {
-	public static function run(string $code): Response
+	public static function run(string $code, string|array $input = []): Response
 	{
-		return (new Interpreter($code))->run();
+		return (new Interpreter($code, $input))->run();
 	}
 }
