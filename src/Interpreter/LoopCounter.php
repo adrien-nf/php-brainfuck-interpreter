@@ -26,7 +26,7 @@ class LoopCounter
 		return $this->getCurrentLoop()[1];
 	}
 
-	protected function getCurrentLoop(): array
+	protected function getCurrentLoop(): array | null
 	{
 		return $this->loops[count($this->loops) - 1];
 	}

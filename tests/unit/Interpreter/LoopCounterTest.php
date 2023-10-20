@@ -33,7 +33,7 @@ final class LoopCounterTest extends TestCase
         $this->assertSame([1, 5], $counter->pubGetCurrentLoop());
 
         $counter->stop();
-        $this->assertSame([], $counter->pubGetCurrentLoop());
+        $this->assertSame(null, $counter->pubGetCurrentLoop());
     }
 
     public function testGetLoopStart()
