@@ -44,7 +44,7 @@ final class ResponseTest extends TestCase
     {
         $response = new Response($this->data);
 
-        $this->expectException(OutOfBoundsException::class);
+        $this->expectException(OutOfRangeException::class);
         $response->getDataAt(5);
     }
 }
