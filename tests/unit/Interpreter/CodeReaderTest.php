@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use AdrienNf\BrainfuckInterpreter\Interpreter\CodeReader;
+use AdrienNf\BrainfuckInterpreter\Exceptions\ReaderReachedEndOfText;
 use PHPUnit\Framework\TestCase;
 
 final class CodeReaderTest extends TestCase
@@ -23,14 +24,14 @@ final class CodeReaderTest extends TestCase
 		}
 	}
 
-	public function testReaderShouldReturnNullIfTooLong(): void
+	public function testReaderShouldThrowExceptionIfTooLong(): void
 	{
 		$reader = new CodeReader(static::$code);
 
 		foreach (str_split(static::$code) as $char) {
 			$this->assertSame($char, $reader->read());
 		}
-
-		$this->assertNull($reader->read());
+		$this->expectException(ReaderReachedEndOfText::class);
+		$reader->read();
 	}
 }

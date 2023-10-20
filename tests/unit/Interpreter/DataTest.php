@@ -95,4 +95,15 @@ final class DataTest extends TestCase
 		$this->assertSame(0, $data->getPointer());
 		$this->assertSame(5, count($data->getDataTable()));
 	}
+
+	public function testDataCanBeSet() {
+		$data = new Data();
+		$this->assertSame(0, $data->get());
+
+		$data->set(50);
+		$this->assertSame(50, $data->get());
+
+		$data->set(10);
+		$this->assertSame(10, $data->get());
+	}
 }
