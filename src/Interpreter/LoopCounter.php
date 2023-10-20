@@ -15,6 +15,10 @@ class LoopCounter
 
 	public function stop(): void
 	{
+		$lastIndex = count($this->loops) - 1;
+
+		if(!array_key_exists($lastIndex, $this->loops)) throw new OutOfRangeException();
+
 		array_pop($this->loops);
 	}
 

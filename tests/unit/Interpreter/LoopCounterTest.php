@@ -36,8 +36,8 @@ final class LoopCounterTest extends TestCase
         $counter->stop();
         $this->assertSame([1, 5], $counter->pubGetCurrentLoop());
 
-        $this->expectException(OutOfRangeException::class);
         $counter->stop();
+        $this->expectException(OutOfRangeException::class);
     }
 
     public function testGetLoopStart()
