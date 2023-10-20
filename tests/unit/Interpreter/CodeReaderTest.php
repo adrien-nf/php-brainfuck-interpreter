@@ -31,6 +31,7 @@ final class CodeReaderTest extends TestCase
 		foreach (str_split(static::$code) as $char) {
 			$this->assertSame($char, $reader->read());
 		}
+		
 		$this->expectException(ReaderReachedEndOfText::class);
 		$reader->read();
 	}
