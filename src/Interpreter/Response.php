@@ -13,8 +13,8 @@ class Response
 
 	public function getDataAt(int $index): int
 	{
-		if(array_key_exists($index, $this->data)) throw new OutOfRangeException();
-		
+		if(!array_key_exists($index, $this->data)) throw new OutOfRangeException();
+
 		return $this->data[$index];
 	}
 
