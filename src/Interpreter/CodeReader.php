@@ -2,6 +2,8 @@
 
 namespace AdrienNf\BrainfuckInterpreter\Interpreter;
 
+use AdrienNf\BrainfuckInterpreter\Exceptions\ReaderReachedEndOfText;
+
 class CodeReader
 {
 	protected int $pointer = 0;
@@ -23,7 +25,7 @@ class CodeReader
 
 	public function read(): string | null
 	{
-		if ($this->hasEnded()) return null;
+		if ($this->hasEnded()) throw new ReaderReachedEndOfText();
 
 		return $this->code[$this->pointer++];
 	}
