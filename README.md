@@ -2,6 +2,8 @@
 Brainfuck Interpreter written in PHP. At last, you're able to handle programming with an actual language.
 ## Installation
 ### Via Composer
+Check out the [composer package](https://packagist.org/packages/adrien-nf/brainfuck-interpreter)
+
 `
 composer require adrien-nf/brainfuck-interpreter
 `
