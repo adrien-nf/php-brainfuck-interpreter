@@ -1,6 +1,6 @@
 <?php
 
-namespace AdrienNf\BrainfuckInterpreter\Interpreter;
+namespace AdrienNf\BrainfuckInterpreter\Response;
 
 class ResponseBuilder
 {

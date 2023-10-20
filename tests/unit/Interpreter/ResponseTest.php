@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use AdrienNf\BrainfuckInterpreter\Interpreter\Response;
+use AdrienNf\BrainfuckInterpreter\Response\Response;
 use PHPUnit\Framework\TestCase;
 
 final class ResponseTest extends TestCase

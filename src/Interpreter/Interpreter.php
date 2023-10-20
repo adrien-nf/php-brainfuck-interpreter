@@ -5,7 +5,7 @@ namespace AdrienNf\BrainfuckInterpreter\Interpreter;
 use AdrienNf\BrainfuckInterpreter\Interpreter\CodeReader;
 use AdrienNf\BrainfuckInterpreter\Interpreter\Data;
 use AdrienNf\BrainfuckInterpreter\Interpreter\LoopCounter;
-use AdrienNf\BrainfuckInterpreter\Interpreter\Response;
+use AdrienNf\BrainfuckInterpreter\Response\Response;
 
 class Interpreter
 {

@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use AdrienNf\BrainfuckInterpreter\Interpreter\Response;
-use AdrienNf\BrainfuckInterpreter\Interpreter\ResponseBuilder;
+use AdrienNf\BrainfuckInterpreter\Response\Response;
+use AdrienNf\BrainfuckInterpreter\Response\ResponseBuilder;
 use PHPUnit\Framework\TestCase;
 
 final class TestableResponseBuilder extends ResponseBuilder {

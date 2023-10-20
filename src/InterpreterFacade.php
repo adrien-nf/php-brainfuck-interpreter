@@ -3,7 +3,7 @@
 namespace AdrienNf\BrainfuckInterpreter;
 
 use AdrienNf\BrainfuckInterpreter\Interpreter\Interpreter;
-use AdrienNf\BrainfuckInterpreter\Interpreter\Response;
+use AdrienNf\BrainfuckInterpreter\Response\Response;
 
 class InterpreterFacade
 {
