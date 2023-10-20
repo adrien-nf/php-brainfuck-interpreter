@@ -19,7 +19,7 @@ final class LoopCounterTest extends TestCase
         $this->assertSame([1, 5], $counter->pubGetCurrentLoop());
 
         $counter->start(10, 20);
-        $this->assertSame([1, 5], $counter->pubGetCurrentLoop());
+        $this->assertSame([10, 20], $counter->pubGetCurrentLoop());
     }
 
     public function testStop()
@@ -28,6 +28,9 @@ final class LoopCounterTest extends TestCase
 
         $counter->start(1, 5);
         $counter->start(10, 20);
+
+        $counter->start(10, 20);
+        $this->assertSame([10, 20], $counter->pubGetCurrentLoop());
 
         $counter->stop();
         $this->assertSame([1, 5], $counter->pubGetCurrentLoop());
