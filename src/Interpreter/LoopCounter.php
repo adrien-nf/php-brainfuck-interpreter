@@ -2,6 +2,8 @@
 
 namespace AdrienNf\BrainfuckInterpreter\Interpreter;
 
+use OutOfRangeException;
+
 class LoopCounter
 {
 	protected array $loops = [];
@@ -26,8 +28,12 @@ class LoopCounter
 		return $this->getCurrentLoop()[1];
 	}
 
-	protected function getCurrentLoop(): array | null
+	protected function getCurrentLoop(): array
 	{
-		return $this->loops[count($this->loops) - 1];
+		$lastIndex = count($this->loops) - 1;
+
+		if(!array_key_exists($lastIndex, $this->loops)) throw new OutOfRangeException();
+
+		return $this->loops[$lastIndex];
 	}
 }
