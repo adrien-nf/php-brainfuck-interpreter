@@ -38,7 +38,6 @@ final class InputsTest extends TestCase
 		$this->assertSame(15, $inputs->get());
 
 		$this->expectException(NotEnoughInputArgsException::class);
-
 		$inputs->get();
 	}
 }
