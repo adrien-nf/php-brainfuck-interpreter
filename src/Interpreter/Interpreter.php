@@ -6,6 +6,7 @@ use AdrienNf\BrainfuckInterpreter\Interpreter\CodeReader;
 use AdrienNf\BrainfuckInterpreter\Interpreter\Data;
 use AdrienNf\BrainfuckInterpreter\Interpreter\LoopCounter;
 use AdrienNf\BrainfuckInterpreter\Response\Response;
+use AdrienNf\BrainfuckInterpreter\Response\ResponseBuilder;
 
 class Interpreter
 {
